@@ -1,0 +1,2251 @@
+
+@font-face {font-family: 'peddana'; src: url('../fonts/Peddana-Regular.ttf');}
+@font-face { font-family: 'raleway'; src: url('../fonts/Raleway-SemiBold.ttf');}
+@font-face { font-family: 'playfair'; src: url('../fonts/PlayfairDisplay-VariableFont_wght.ttf');} 
+/*@import url('https://fonts.googleapis.com/css2?family=Peddana&family=Playfair+Display&family=Raleway:wght@600&display=swap');*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container_loader{
+  background-color: rgb(250, 240, 245);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  transition: all 1s ease;
+  z-index: 999;
+}
+
+.container_loader--close{
+  display: none;
+}
+
+/*********************************************/
+/*************** LOADER *********************/
+/*******************************************/
+
+.sk-folding-cube {
+  position: absolute;
+  top: 50%;
+  margin: 20px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+
+.sk-folding-cube .sk-cube {
+  float: left;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1); 
+}
+.sk-folding-cube .sk-cube:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(39, 29, 29);
+  -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+          animation: sk-foldCubeAngle 2.4s infinite linear both;
+  -webkit-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+}
+.sk-folding-cube .sk-cube2 {
+  -webkit-transform: scale(1.1) rotateZ(90deg);
+          transform: scale(1.1) rotateZ(90deg);
+}
+.sk-folding-cube .sk-cube3 {
+  -webkit-transform: scale(1.1) rotateZ(180deg);
+          transform: scale(1.1) rotateZ(180deg);
+}
+.sk-folding-cube .sk-cube4 {
+  -webkit-transform: scale(1.1) rotateZ(270deg);
+          transform: scale(1.1) rotateZ(270deg);
+}
+.sk-folding-cube .sk-cube2:before {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.sk-folding-cube .sk-cube3:before {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s; 
+}
+.sk-folding-cube .sk-cube4:before {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+@-webkit-keyframes sk-foldCubeAngle {
+  0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; 
+  } 25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+    opacity: 1; 
+  } 90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+    opacity: 0; 
+  } 
+}
+
+@keyframes sk-foldCubeAngle {
+  0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; 
+  } 25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+    opacity: 1; 
+  } 90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+    opacity: 0; 
+  }
+}
+
+
+ul{list-style: none;}
+
+/****************************************/
+/************   HEADER    ***************/
+/****************************************/
+
+.nav{
+  position: absolute;
+  display: flex;
+  z-index: 10;
+  height: 80px;
+  width: 100%;
+  background-color: rgba(43, 26, 26, 0.9);
+}
+
+.boxLogo{
+  position: relative;
+  display: flex;
+  width: 15%;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxLogo__img{
+  height: 75px;
+  width: 85px;
+}
+
+.menu{
+  position: relative;
+  display: inline-block;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu__li{
+  margin: 0px 15px;
+}
+
+.menu__link{
+  font-family: 'raleway';
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.boxSocial{
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 15%;
+}
+
+.boxSocial__img{
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.divMenuPush{
+  position: fixed;
+  z-index: 10;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+}
+
+.menuPush__img{
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
+.hideInput{
+  display: none;
+}
+
+.showInput{
+  display: none;
+}
+
+/***********************************/
+/********* INICIO  *******************/
+/***********************************/
+
+.section1{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url('../img/main/1.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .section1__black{
+      position: relative;
+      display: block;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(43, 26, 26, 0.7);
+  }
+  
+  .boxTextos{
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    top: 200px;
+    height: 300px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .boxTextos__titulo{
+    font-family: 'playfair', sans-serif;
+    font-size: 105px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 30px;
+  }
+  
+  .boxTextos__parrafo{
+    font-family: 'playfair', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  
+/**************************************************/
+/***************   ABOUT US   ********************/
+/*************************************************/
+
+  .section2{
+    height: 950px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .container{
+    width: 97%;
+    padding: 5px;
+    padding-right: 5px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .boxAbout{
+    position: relative;
+    display: flex;
+    height: 810px;
+    width: 100%;
+    margin-top: 100px;
+  }
+  
+  .boxImages{
+    position: relative;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+  }
+  
+  .boxImages__img{
+    height: 450px;
+    width: 300px;
+    border: 1px solid rgba(5, 5, 5, 0.2);
+    box-shadow: 3px 4px 4px rgba(20, 19, 19, 0.3);
+    border-radius: 4px;
+    transition: .4s ease-out;
+  }
+  
+  .boxImages__img:hover{
+      box-shadow: 5px 8px 8px rgba(20, 19, 19, 0.3);
+      transform: scale(1.1);
+      transition: .4s ease-in;
+  }
+  
+  .boxImages--imgAbsolute1{
+    position: absolute;
+    z-index: 2;
+    height: 350px;
+    width: 250px;
+    left: 300px;
+    top: 280px;
+  }
+  
+  
+  .boxImages--imgAbsolute2{
+    position: absolute;
+    left: 10px;
+    top: 100px;
+    height: 550px;
+    width: 400px;
+  }
+  
+  
+  .boxDescription{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+    height: 92%;
+    background-image: url('../img/about-us/marco5.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    box-shadow: 4px 8px 8px rgba(20, 19, 19, 0.1);
+    visibility: hidden;
+  }
+  
+  .boxDescription__img{
+    position: relative;
+    display: block;
+    height: 90px;
+    width: 100px;
+    margin-top: 50px;
+  }
+  
+  .boxDescription__titulo{
+    font-family: 'peddana', sans-serif;
+    font-size: 55px;
+    color: rgba(43, 26, 26, 0.9);
+    margin: 10px 0;
+  }
+  
+  .boxDescription__parrafo{
+    font-family: Calibri, sans-serif;
+    font-size: 22px;
+    text-align: justify;
+    line-height: 1.5;
+    width: 80%;
+    color: rgb(56, 54, 54);
+  }
+  
+/***********************************************/
+/************* PARALLAX 1 *********************/
+/********************************************/
+  
+  .sectionParallax{
+    position: relative;
+    display: block;
+    height: 550px;
+    width: 100%;
+  }
+  
+  .parallax{
+    height: 100%;
+    width: 100%;
+    background: url('../img/parallax/parallax1-min.jpg') no-repeat fixed;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  .textosParallax{
+    height: 100%;
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .textosParallax__titulo{
+    font-family: 'playfair', sans-serif;
+    font-size: 74px;
+    color: #ffebeb;
+    text-align: center;
+  }
+  
+  .textosParallax__parrafo{
+    width: 60%;
+    margin-top: 40px;
+    font-family: Calibri, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.4;
+    color: #fff1f1;
+   
+  }
+  
+  /***************************/
+  /******* DESSERTS  ***********/
+  /************************** */
+  
+  .section3{
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .boxDesserts{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin-top: 60px;
+  }
+  
+  .boxDesserts__img{
+    height: 80px;
+    width: 80px;
+  }
+  
+  .boxDesserts__titulo{
+    margin-top: 5px;
+    font-family: 'peddana', sans-serif;
+    font-size: 70px;
+    color: rgba(43, 26, 26, 0.9);
+  }
+  
+  .boxDesserts__parrafo{
+    width: 70%;
+    font-family: Calibri, sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center;
+    color: rgb(51, 50, 50);
+  }
+  
+  .boxDesserts__galeria{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+   
+
+  }
+  
+  .visiHiden{
+    visibility: hidden;
+  }
+  
+  .boxImg{
+    position: relative;
+    display: block;
+    height: 400px;
+    width: 300px;
+    margin: 5px 5px;
+    cursor: pointer;
+  }
+  
+  .overlay{
+      position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(43, 26, 26, 0.7);
+      overflow: hidden;
+      width: 100%;
+      height: 0%;
+      transition: .55s ease;
+  }
+  
+  .overlay__parrafo{
+    font-family: Calibri, sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+  }
+  
+  .boxImg__img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: 1px solid rgba(44, 43, 43, 0.1);
+    box-shadow: 4px 6px 6px rgba(20, 19, 19, 0.1);
+    transition: .4s ease-out;
+  }
+  
+  .boxImg:hover .overlay {
+    height: 20%;
+    left: 0;
+    
+  }
+  
+  .overlay:hover{
+      background-color: rgba(43, 26, 26, 0.7);
+  }
+  
+  .letOver{
+    text-decoration: none;
+  }
+
+  /**********************************************/
+  /**************   CAKE     ********************/
+  /**********************************************/
+  
+  .section4{
+    height: 1520px;
+    width: 100%;
+    background-color: rgb(249, 249, 249);
+    overflow: hidden;
+  }
+  
+  .boxDesserts__parrafo--cake{
+    width: 74%;
+  }
+  
+  .boxDesserts__galeria--margin{
+    margin-top: 50px;
+    
+  }
+  
+  .card{
+    display: block;
+    width: 320px;
+    height: 500px;
+    margin: 20px 30px;
+    border: 1px solid rgba(22, 22, 22, 0.1);
+    border-radius: 4px;
+    box-shadow: 3px 6px 6px rgba(32, 31, 31, 0.1);
+    transition: all .3s ease-in-out;
+  }
+  
+  
+  .card__image{
+    height: 50%;
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  
+  .card__img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  
+  .card__textos{
+    height: 40%;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card__textos-titulo{
+    font-family: 'peddana', sans-serif;
+    font-size: 34px;
+    margin: 0px 0px;
+  }
+  
+  .card__textos-parrafo{
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: justify;
+    overflow: hidden;
+    display: -webkit-box;
+
+    color: rgb(61, 61, 61);
+  }
+  
+  .card__stats{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    /*background-color: rgb(97, 64, 64);*/
+    
+  }
+  
+  .stats{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  
+  .btnStat{
+    width: 120px;
+    display: block;
+    font-family: Calibri, sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid rgba(43, 26, 26, 0.5);
+    border-radius: 4px;
+    background-color: rgba(252, 252, 252, 0.8);
+    color: rgba(43, 26, 26, 0.9);
+    transition: all .3s ease-out;
+  }
+  
+  .btnStat:hover{
+    background: rgba(43, 26, 26, 0.7);
+    border-color: rgba(43, 26, 26, 0.3);
+    color: #fff;
+    transition: all .3s ease-in;
+  }
+  
+  
+  /**************************************/
+  /*********** PARALLAX 2 ************/
+  /**************************************/
+  
+  .parallax2{
+    height: 100%;
+    width: 100%;
+    background: url('../img/parallax/parallax3.jpg') no-repeat fixed;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  
+/**********************************************/
+/************   LOCATION   *******************/
+/***********************************************/
+
+  .section5{
+    position: relative;
+    height: 930px;
+    width: 100%;
+
+  }
+  
+  .boxLocation{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+  }
+
+  .boxDesserts__galeria--altura{
+    height: 500px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url('../img/location/world_map.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+  }
+
+.boxDesserts__galeria--position{
+    justify-content: space-evenly;
+    align-items: initial;
+}
+
+.cardLocation{
+    position: relative;
+    height: 300px;
+    width: 250px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.cardLocation__title{
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cardLocation__p{
+    width: 90%;
+    font-family: Calibri, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.4;
+    color: rgb(53, 51, 51);
+}
+
+/********************************************/
+/**************   REVIEW   *****************/
+/*******************************************/
+
+.section6{
+  position: relative;
+  height: 900px;
+  width: 100%;
+  background-color: rgb(249, 249, 249);
+  overflow: hidden;
+}
+
+.boxReview{
+  height: 400px;
+  width: 90%;
+  margin: 100px auto 0 auto;
+  display: flex;
+}
+
+.reviewData{
+  width: 100%;
+  margin: 0 auto 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  
+}
+
+.cardReview{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 320px;
+  border: 1px solid rgba(20, 19, 19, 0.1);
+  box-shadow: 3px 6px 6px rgba(32, 31, 31, 0.1);
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+.cardReview__img{
+  height: 110px;
+  width: 110px;
+  position: absolute;
+  object-fit: cover;
+  border: 4px solid rgba(153, 23, 23, 0.9);
+  border-radius: 50%;
+  top: -10%;
+  left: 33%;
+}
+
+.cardReview__p{
+  width: 80%;
+  margin: 50px 0 10px 0;
+  font-family: Calibri;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: justify;
+  color: rgb(73, 72, 72);
+}
+
+.labelStar{
+  font-size: 20px;
+  color: orange;
+}
+
+.cardReview__h3{
+  margin-top: 40px;
+  font-family: 'raleway';
+  font-size: 20px;
+  color: rgb(37, 37, 37);
+}
+
+/********************************************/
+/************* CONTACT       ***************/
+/*****************************************/
+
+.section7{
+  position: relative;
+  height: 750px;
+  width: 100%;
+  border-top: 1px solid rgba(43, 26, 26, 0.8);
+  /*background-color: rgba(43, 26, 26, 0.8);*/
+  background-image: url('../img/logo3.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.contact__parallax{
+  width: 100%;
+  height: 100%;
+  background: rgba(36, 22, 22, 0.93);
+}
+
+.boxContact{
+  margin-top: 20px;
+  height: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.contactContent{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footerMenu{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100%;
+  left: 90px;
+}
+
+.footerMenu__li{
+  width: 200px;
+  margin: 25px 0;
+}
+
+.footerMenu__a{
+  position: relative;
+  display: block;
+  width: 100%;
+  font-family: 'raleway';
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-bottom-color: rgba(255, 255, 255, .2);
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffebeb;
+  
+}
+
+.footerMenu__a::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #b47dcd, #e878a2, #eb85ab);
+  z-index: 1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.footerMenu__a:hover::before{
+  transform: scaleX(1);
+}
+
+.footerMenu__ul[data-animation="to-left"] .footerMenu__a::before {
+  transform-origin: right;
+}
+ 
+.footerMenu__ul[data-animation="center"] .footerMenu__a::before {
+  transform-origin: center;
+}
+
+.footerMenu__ul[data-animation="bonus"] .footerMenu__a::before {
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+}
+ 
+.footerMenu__ul[data-animation="bonus"] .footerMenu__a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+}
+
+
+.centerImage{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerImage__img{
+  height: 140px;
+  width: 140px;
+  object-fit: cover;
+}
+
+.boxInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+}
+
+.info-group{
+  position: relative;
+  width: 50%;
+  left: 60px;
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.info-group__img{
+  position: relative;
+  display: block;
+  left: 0;
+  height: 35px;
+  width: 35px;
+}
+
+.info-group__p{
+  position: relative;
+  font-family: 'raleway';
+  font-size: 16px;
+  left: 20px;
+  color: #ffebeb;
+}
+
+.footerSocial{
+  position: relative;
+  margin: 25px 0;
+  width: 70%;
+  left: 60px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.boxSocial__img--new{
+  height: 30px;
+  width: 30px;
+}
+
+@media screen and (max-width: 1024px){
+
+/****************************************/
+/************   HEADER    ***************/
+/****************************************/
+
+/*.nav{
+  position: absolute;
+  display: flex;
+  z-index: 10;
+  height: 80px;
+  width: 100%;
+  background-color: rgba(43, 26, 26, 0.9);
+}*/
+
+.boxLogo{
+  width: 12%;
+}
+
+.boxLogo__img{
+  height: 70px;
+  width: 80px;
+}
+
+.menu{
+  width: 75%;
+}
+
+/*.menu__li{
+  margin: 0px 15px;
+}*/
+
+.menu__link{
+  font-size: 14px;
+}
+
+.boxSocial{
+
+  width: 12%;
+}
+
+/*.boxSocial__img{
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}*/
+
+/***********************************/
+/********* INICIO  *******************/
+/***********************************/
+
+/*.boxTextos{
+  position: absolute;
+  display: flex;
+  z-index: 1;
+  top: 200px;
+  height: 300px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}*/
+
+.boxTextos__titulo{
+  font-size: 90px;
+}
+
+.boxTextos__parrafo{
+  font-size: 24px;
+}
+
+/**************************************************/
+/***************   ABOUT US   ********************/
+/*************************************************/
+
+/*.section2{
+  height: 950px;
+  width: 100%;
+}*/
+
+/*.container{
+  width: 97%;
+  padding: 5px;
+  padding-right: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}*/
+
+/*.boxAbout{
+  position: relative;
+  display: flex;
+  height: 810px;
+  width: 100%;
+  margin-top: 100px;
+}*/
+
+.boxImages{
+  position: relative;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.boxImages__img{
+  height: 450px;
+  width: 250px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+  box-shadow: 3px 4px 4px rgba(20, 19, 19, 0.3);
+  border-radius: 4px;
+  transition: .4s ease-out;
+}
+
+.boxImages__img:hover{
+    box-shadow: 5px 8px 8px rgba(20, 19, 19, 0.3);
+    transform: scale(1.1);
+    transition: .4s ease-in;
+}
+
+.boxImages--imgAbsolute1{
+  position: absolute;
+  z-index: 2;
+  height: 300px;
+  width: 230px;
+  left: 140px;
+  top: 380px;
+}
+
+
+.boxImages--imgAbsolute2{
+  position: absolute;
+  left: 10px;
+  top: 100px;
+  height: 400px;
+  width: 320px;
+}
+
+
+.boxDescription{
+  width: 60%;
+  height: 100%;
+  background-image: url('../img/about-us/marco4.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  box-shadow: 4px 8px 8px rgba(20, 19, 19, 0.1);
+  margin-top: -60px;
+}
+
+.boxDescription__img{
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.boxDescription__titulo{
+  font-size: 55px;
+  color: rgba(43, 26, 26, 0.9);
+  margin: 10px 0;
+  margin-left: 40px;
+}
+
+.boxDescription__parrafo{
+  font-family: Calibri, sans-serif;
+  font-size: 22px;
+  text-align: justify;
+  line-height: 1.4;
+  width: 75%;
+  color: rgb(56, 54, 54);
+  margin-left: 20px;
+}
+
+/****************************************/
+/******** PARALLAX 1 ******************/
+/****************************************/
+
+.sectionParallax{
+  position: relative;
+  display: block;
+  height: 550px;
+  width: 100%;
+}
+
+.parallax{
+  height: 100%;
+  width: 100%;
+  background: url('../img/parallax/parallax1-min.jpg') no-repeat fixed;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.textosParallax{
+  height: 100%;
+  width: 90%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.textosParallax__titulo{
+  font-family: 'playfair', sans-serif;
+  font-size: 74px;
+  color: #ffebeb;
+  text-align: center;
+}
+
+.textosParallax__parrafo{
+  width: 60%;
+  margin-top: 40px;
+  font-family: Calibri, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.4;
+  color: #fff1f1;
+ 
+}
+
+ /***************************/
+  /******* DESSERTS  ***********/
+  /************************** */
+  
+  .section3{
+    height: auto;
+    width: 100%;
+  }
+  
+  .boxDesserts{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin-top: 60px;
+  }
+  
+  /*.boxDesserts__img{
+    height: 80px;
+    width: 80px;
+  }
+  
+  .boxDesserts__titulo{
+    margin-top: 5px;
+    font-family: 'peddana', sans-serif;
+    font-size: 70px;
+    color: rgba(43, 26, 26, 0.9);
+  }
+  
+  .boxDesserts__parrafo{
+    width: 70%;
+    font-family: Calibri, sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center;
+    color: rgb(51, 50, 50);
+  } */
+  
+  .boxDesserts__galeria{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .boxImg{
+    position: relative;
+    display: block;
+    height: 380px;
+    width: 280px;
+    margin: 10px 10px;
+    cursor: pointer;
+  }
+  
+  .overlay{
+      position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(43, 26, 26, 0.7);
+      overflow: hidden;
+      width: 100%;
+      height: 0%;
+      transition: .55s ease;
+  }
+  
+  .overlay__parrafo{
+    font-family: Calibri, sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+  }
+  
+  /*.boxImg__img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: 1px solid rgba(44, 43, 43, 0.1);
+    box-shadow: 4px 6px 6px rgba(20, 19, 19, 0.1);
+    transition: .4s ease-out;
+  }
+  
+  .boxImg:hover .overlay {
+    height: 20%;
+    left: 0;
+    
+  }
+  
+  .overlay:hover{
+      background-color: rgba(43, 26, 26, 0.7);
+  }
+  
+  .letOver{
+    text-decoration: none;
+  }*/
+
+/**********************************************/
+  /**************   CAKE     ********************/
+  /**********************************************/
+  
+  .section4{
+    height: auto;
+    width: 100%;
+    background-color: rgb(249, 249, 249);
+  }
+  
+/********************************************/
+/**************   REVIEW   *****************/
+/*******************************************/
+
+.section6{
+  position: relative;
+  height: auto;
+  width: 100%;
+  background-color: rgb(249, 249, 249);
+}
+
+.boxReview{
+  height: auto;
+  width: 90%;
+  margin: 100px auto 0 auto;
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.reviewData{
+  width: 100%;
+  margin: 0 auto 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.cardReview{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 320px;
+  border: 1px solid rgba(20, 19, 19, 0.1);
+  box-shadow: 3px 6px 6px rgba(32, 31, 31, 0.1);
+  border-radius: 4px;
+  margin: 50px 0;
+  background: #ffffff;
+}
+
+.cardReview__img{
+  height: 110px;
+  width: 110px;
+  position: absolute;
+  object-fit: cover;
+  border: 4px solid rgba(153, 23, 23, 0.9);
+  border-radius: 50%;
+  top: -10%;
+  left: 33%;
+}
+
+.cardReview__p{
+  width: 80%;
+  margin: 50px 0 10px 0;
+  font-family: Calibri;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: justify;
+  color: rgb(73, 72, 72);
+}
+
+.labelStar{
+  font-size: 20px;
+  color: orange;
+}
+
+.cardReview__h3{
+  margin-top: 40px;
+  font-family: 'raleway';
+  font-size: 20px;
+  color: rgb(37, 37, 37);
+}
+
+}
+
+@media screen and (max-width: 768px){
+
+/****************************************/
+/************   HEADER    ***************/
+/****************************************/
+
+.nav{
+  position: fixed;
+  z-index: 10;
+  height: 100%;
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(43, 26, 26);
+  border-right: 1px solid rgba(43, 26, 26, .5);
+  box-shadow: 3px 2px 2px rgba(20, 19, 19, 0.1);
+}
+
+
+.boxLogo{
+  margin: 10px 0;
+  width: 100%;
+}
+
+.boxLogo__img{
+  height: 75px;
+  width: 85px;
+}
+
+.menu{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu__li{
+  width: 100%;
+  margin: 5px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu__link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 45px;
+  font-family: 'raleway';
+  font-size: 14px;
+  /*background-color: rgba(36, 23, 23, 0.8); */
+  border: 1px solid transparent;
+}
+
+.menu__link:hover{
+  background-color: rgba(36, 23, 23, 0.8);
+  border-color: rgba(20, 19, 19, 0.2);
+}
+
+.boxSocial{
+  position: absolute;
+  height: 60px;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgb(43, 26, 26);
+  border-top: 1px solid rgba(54, 41, 41, 0.7);
+}
+
+.boxSocial__img{
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.hideMenu{
+  transform: translateX(-100%);
+  transition: .3s ease-in-out;
+}
+
+.showMenu{
+  transform: translateX(0%);
+  transition: .3s ease-in-out;
+}
+
+.hideInput{
+  display: block;
+  top: 15px;
+  transform: translateX(50%);
+  transition: .3s ease-in-out;
+}
+
+.showInput{
+  display: block;
+  top: 15px;
+  transform: translateX(600%);
+  transition: .3s ease-in-out;
+}
+
+/***********************************/
+/********* INICIO  *******************/
+/***********************************/
+
+.boxTextos{
+  position: absolute;
+  display: flex;
+  z-index: 1;
+  top: 200px;
+  height: 300px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxTextos__titulo{
+  font-size: 65px;
+  margin-bottom: 30px;
+}
+
+.boxTextos__parrafo{
+  font-size: 18px;
+}
+
+/**************************************************/
+/***************   ABOUT US   ********************/
+/*************************************************/
+
+.section2{
+  height: auto;
+  width: 100%;
+}
+
+
+
+.boxAbout{
+  position: relative;
+  display: flex;
+  height: auto;
+  width: 100%;
+  margin-top: 100px;
+  padding-bottom: 70px;
+}
+
+.boxImages{
+
+  position: relative;
+  width: 0%;
+  height: 0%;
+
+}
+
+.boxImages__img{
+  height: 450px;
+  width: 300px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+  box-shadow: 1px 2px 2px rgba(20, 19, 19, 0.3);
+  border-radius: 4px;
+  transition: .4s ease-out;
+}
+
+.boxImages__img:hover{
+    box-shadow: 5px 8px 8px rgba(20, 19, 19, 0.3);
+    transform: scale(1.1);
+    transition: .4s ease-in;
+}
+
+.boxImages--imgAbsolute1{
+  height: 130px;
+  width: 120px;
+  left: 306px;
+  top: 460px;
+}
+
+
+.boxImages--imgAbsolute2{
+  display: none;
+}
+
+
+.boxDescription{
+  width: 100%;
+  height: 720px;
+  background-image: url('../img/about-us/marco5.jpg');
+  background-size: cover;
+  background-position: center;
+  
+}
+
+.boxDescription__img{
+  position: relative;
+  display: block;
+  height: 90px;
+  width: 100px;
+  margin-top: 50px;
+  margin-right: 35px;
+}
+
+.boxDescription__titulo{
+  font-family: 'peddana', sans-serif;
+  font-size: 55px;
+  color: rgba(43, 26, 26, 0.9);
+  margin: 10px 0;
+}
+
+.boxDescription__parrafo{
+  font-size: 20px;
+  text-align: justify;
+  line-height: 1.5;
+  width: 80%;
+  color: rgb(56, 54, 54);
+}
+
+/***********************************************/
+/************* PARALLAX 1 *********************/
+/********************************************/
+  
+.sectionParallax{
+  position: relative;
+  display: block;
+  height: 550px;
+  width: 100%;
+}
+
+.textosParallax__titulo{
+  font-size: 58px;
+}
+
+.textosParallax__parrafo{
+  width: 85%;
+  margin-top: 40px;
+  font-size: 22px; 
+}
+
+/***************************/
+  /******* DESSERTS  ***********/
+  /************************** */
+  
+  .section3{
+    height: auto;
+    width: 100%;
+  }
+  
+  .boxDesserts{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin-top: 60px;
+  }
+  
+  .boxDesserts__img{
+    height: 80px;
+    width: 80px;
+  }
+  
+  .boxDesserts__titulo{
+    font-size: 66px;
+    color: rgba(43, 26, 26, 0.9);
+  }
+  
+  .boxDesserts__parrafo{
+    width: 80%;
+    font-size: 20px;
+  }
+  
+  .boxDesserts__galeria{
+    height: auto;
+    width: 100%;
+    margin-top: 50px;
+  }
+  
+  
+  .boxImg{
+    position: relative;
+    display: block;
+    height: 250px;
+    width: 200px;
+    margin: 10px 5px;
+    cursor: pointer;
+  }
+  
+  
+  .overlay__parrafo{
+    font-family: Calibri, sans-serif;
+    font-size: 22px;
+    color: #ffffff;
+  }
+  
+  .letOver{
+    text-decoration: none;
+  }
+
+/**********************************************/
+  /**************   CAKE     ********************/
+  /**********************************************/
+  
+  .section4{
+    height: auto;
+  }
+  
+  .boxDesserts__parrafo--cake{
+    width: 84%;
+  }
+  
+  .boxDesserts__titulo--center{
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  .boxDesserts__galeria--margin{
+    margin-top: 50px;
+  }
+  
+  .card{
+    display: block;
+    width: 310px;
+    height: 500px;
+    margin: 15px 15px;
+  }
+  
+  .card__image{
+    height: 45%;
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  
+  .card__img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  
+  .card__textos{
+    height: 45%;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card__textos-titulo{
+    font-family: 'peddana', sans-serif;
+    font-size: 34px;
+    margin: 0px 0px;
+  }
+  
+  .card__textos-parrafo{
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  
+  
+  
+/**********************************************/
+/************   LOCATION   *******************/
+/***********************************************/
+
+  .section5{
+    position: relative;
+    height: auto;
+    width: 100%;
+
+  }
+
+  .boxDesserts__galeria--altura{
+    height: auto;
+    width: 85%;
+  }
+
+.boxDesserts__galeria--position{
+    justify-content: space-evenly;
+    align-items: initial;
+}
+
+/********************************************/
+/**************   REVIEW   *****************/
+/*******************************************/
+
+.section6{
+  height: auto;
+  width: 100%;
+}
+
+.boxReview{
+  height: auto;
+  width: 90%;
+}
+
+.cardReview{
+  height: 400px;
+  width: 300px;
+  margin: 45px 10px;
+}
+
+.cardReview__p{
+  width: 80%;
+  margin: 60px 0 10px 0;
+  font-family: Calibri;
+  font-size: 16px;
+}
+
+
+
+/********************************************/
+/*************   CONTACT       ***************/
+/*****************************************/
+
+.section7{
+  height: auto;
+}
+
+.boxContact{
+  margin-top: 20px;
+  height: auto;
+  width: 100%;
+  padding-bottom: 50px;
+
+}
+
+
+
+.footerMenu{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100%;
+  left: 40px;
+}
+
+.footerMenu__li{
+  width: 200px;
+  margin: 25px 0;
+}
+
+.centerImage{
+  display: none;
+  width: 20%;
+  height: 100%;
+}
+
+.centerImage__img{
+  display: none;
+
+}
+
+.boxInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.info-group{
+  position: relative;
+  width: 60%;
+  left: 60px;
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.info-group__img{
+  position: relative;
+  display: block;
+  left: 0;
+  height: 35px;
+  width: 35px;
+}
+
+.info-group__p{
+  position: relative;
+  font-family: 'raleway';
+  font-size: 16px;
+  left: 20px;
+  color: #ffebeb;
+}
+
+.footerSocial{
+  position: relative;
+  margin: 25px 0;
+  width: 70%;
+  left: 60px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.boxSocial__img--new{
+  height: 30px;
+  width: 30px;
+}
+
+
+
+}
+
+
+@media screen and (max-width: 600px){
+
+  /****************************************/
+  /************   HEADER    ***************/
+  /****************************************/
+  
+  .nav{
+    z-index: 10;
+    height: 100%;
+    width: 40%;
+  }
+  
+  
+  /***********************************/
+  /********* INICIO  *******************/
+  /***********************************/
+  
+  .boxTextos{
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    top: 200px;
+    height: 300px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .boxTextos__titulo{
+    font-size: 52px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .boxTextos__parrafo{
+    font-size: 14px;
+  }
+
+/**************************************************/
+/***************   ABOUT US   ********************/
+/*************************************************/
+
+.section2{
+  height: auto;
+  width: 100%;
+}
+
+.boxAbout{
+  position: relative;
+  display: flex;
+  height: auto;
+  width: 100%;
+  margin-top: 100px;
+  padding-bottom: 70px;
+}
+
+.boxImages{
+  position: relative;
+  width: 0%;
+  height: 0%;
+}
+
+.boxImages__img{
+  height: 450px;
+  width: 300px;
+}
+
+.boxImages--imgAbsolute1{
+  height: 100px;
+  width: 90px;
+  left: 236px;
+  top: 510px;
+}
+
+.boxDescription{
+  width: 100%;
+  height: 680px;
+  margin: 0 auto;  
+}
+
+.boxDescription__img{
+  height: 90px;
+  width: 100px;
+  margin-top: 50px;
+  margin-right: 45px;
+}
+
+
+.boxDescription__parrafo{
+  font-size: 18px;
+  line-height: 1.5;
+  width: 80%;
+}
+
+/***********************************************/
+/************* PARALLAX 1 *********************/
+/********************************************/
+  
+.sectionParallax{
+  position: relative;
+  display: block;
+  height: 500px;
+  width: 100%;
+}
+
+.textosParallax__titulo{
+  font-size: 42px;
+}
+
+.textosParallax__parrafo{
+  width: 90%;
+  margin-top: 40px;
+  font-size: 18px; 
+}
+
+/***************************/
+  /******* DESSERTS  ***********/
+  /************************** */
+  
+  .boxDesserts__img{
+    height: 80px;
+    width: 80px;
+  }
+  
+  .boxDesserts__titulo{
+    font-size: 62px;
+    color: rgba(43, 26, 26, 0.9);
+    margin-top: 25px;
+  }
+  
+  .boxDesserts__parrafo{
+    width: 85%;
+    font-size: 18px;
+    margin-top: 25px;
+  }
+    
+  .boxImg{
+    height: 250px;
+    width: 200px;
+    margin: 10px 10px;
+    cursor: pointer;
+  }
+  
+  .overlay__parrafo{
+    font-size: 20px;
+  }
+  
+/**********************************************/
+  /**************   CAKE     ********************/
+  /**********************************************/
+
+  
+  .card{
+    display: block;
+    width: 300px;
+    height: 480px;
+    margin: 15px 10px;
+  }
+  
+  .card__image{
+    height: 45%;
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  
+  .card__textos{
+    height: 40%;
+    width: 100%;
+    padding: 15px;
+  }
+  
+  .card__textos-titulo{
+    font-size: 32px;
+    margin: 0px 0px;
+  }
+  
+  .card__textos-parrafo{
+    font-family: Calibri, sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  
+/********************************************/
+/*************   CONTACT       ***************/
+/*****************************************/
+
+
+
+.footerMenu{
+  display: none;
+  width: 0%;
+  height: 0%;
+  left: 0px;
+}
+
+.footerMenu__li{
+  width: 200px;
+  margin: 25px 0;
+}
+
+.centerImage{
+  display: none;
+  width: 0%;
+  height: 0%;
+}
+
+.centerImage__img{
+  display: none;
+
+}
+
+.boxInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.info-group{
+  position: relative;
+  width: 60%;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.info-group__img{
+  position: relative;
+  display: block;
+  left: 0;
+  height: 35px;
+  width: 35px;
+}
+
+.info-group__p{
+  position: relative;
+  font-family: 'raleway';
+  font-size: 16px;
+  left: 20px;
+  color: #ffebeb;
+}
+
+.footerSocial{
+  position: relative;
+  margin: 25px auto;
+  width: 100%;
+  left: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+}
+
+@media screen and (max-width: 425px){
+
+ /****************************************/
+  /************   HEADER    ***************/
+  /****************************************/
+  
+  .nav{
+    z-index: 10;
+    height: 100%;
+    width: 58%;
+  }
+  
+  .menu__link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 35px;
+    font-family: 'raleway';
+    font-size: 12px;
+    /*background-color: rgba(36, 23, 23, 0.8); */
+    border: 1px solid transparent;
+  }
+
+  /***********************************/
+  /********* INICIO  *******************/
+  /***********************************/
+  
+
+  
+  .boxTextos__titulo{
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .boxTextos__parrafo{
+    font-size: 12px;
+    text-align: center;
+  }
+
+/**************************************************/
+/***************   ABOUT US   ********************/
+/*************************************************/
+
+
+.boxImages--imgAbsolute1{
+  display: none;
+  height: 100px;
+  width: 90px;
+  left: 236px;
+  top: 510px;
+}
+
+.boxDescription{
+  width: 100%;
+  height: 580px;
+  margin: 0 auto;  
+}
+
+.boxDescription__parrafo{
+  font-size: 14px;
+  line-height: 1.5;
+  width: 80%;
+}
+
+/***********************************************/
+/************* PARALLAX 1 *********************/
+/********************************************/
+  
+.sectionParallax{
+
+  height: 500px;
+  width: 100%;
+}
+
+.textosParallax__titulo{
+  font-size: 40px;
+}
+
+.textosParallax__parrafo{
+  width: 90%;
+  margin-top: 40px;
+  font-size: 16px; 
+}
+  
+.footerSocial{
+  position: relative;
+  margin: 25px auto;
+  width: 100%;
+  left: 5px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+}
+
+.boxDesserts__titulo--pink{
+  color: #ffebeb;
+}
