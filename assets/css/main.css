@@ -184,8 +184,8 @@ ul{list-style: none;}
 .divMenuPush{
   position: fixed;
   z-index: 10;
-  height: 45px;
-  width: 45px;
+  height: 35px;
+  width: 35px;
   cursor: pointer;
 }
 
@@ -1383,6 +1383,8 @@ ul{list-style: none;}
 
 }
 
+
+
 @media screen and (max-width: 768px){
 
 /****************************************/
@@ -1393,7 +1395,7 @@ ul{list-style: none;}
   position: fixed;
   z-index: 10;
   height: 100%;
-  width: 32%;
+  width: 25%;
   display: flex;
   flex-direction: column;
   background-color: rgb(43, 26, 26);
@@ -1419,6 +1421,8 @@ ul{list-style: none;}
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .menu__li{
@@ -1887,8 +1891,220 @@ ul{list-style: none;}
   width: 30px;
 }
 
+}
+
+@media screen and (max-width: 850px) and (orientation: landscape){
+
+  /********************* MENU **************************/
+  .menu{
+    overflow-y: scroll;
+  }
+  
+  .boxLogo__img{
+    height: 50px;
+    width: 60px;
+  }
+  
+  .menu__link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    font-family: 'raleway';
+    font-size: 12px;
+    /*background-color: rgba(36, 23, 23, 0.8); */
+    border: 1px solid transparent;
+  }
+  
+  .boxSocial__img{
+    height: 16px;
+    width: 16px;
+  }
+  
+    /***********************************/
+    /********* INICIO  *******************/
+    /***********************************/
+    
+    .boxTextos{
+      position: absolute;
+      display: flex;
+      z-index: 1;
+      top: 70px;
+    }
+    
+    .boxTextos__titulo{
+      font-size: 52px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .boxTextos__parrafo{
+      font-size: 14px;
+    }
+
+    .boxInfo{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+    }
+    
+    .info-group{
+      position: relative;
+      width: 30%;
+      left: 0px;
+      display: flex;
+      align-items: center;
+      margin: 25px 0;
+    }
+    
+    .info-group__img{
+      position: relative;
+      display: block;
+      left: 0;
+      height: 35px;
+      width: 35px;
+    }
 
 
+  }
+  
+
+@media screen and (max-width: 770px) and (orientation: landscape){
+
+  /********************* MENU **************************/
+  .menu{
+    overflow-y: scroll;
+  }
+  
+  .boxLogo__img{
+    height: 50px;
+    width: 60px;
+  }
+  
+  .menu__li{
+    margin: 2px 0px;
+  }
+  
+  
+  .menu__link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    font-family: 'raleway';
+    font-size: 10px;
+    /*background-color: rgba(36, 23, 23, 0.8); */
+    border: 1px solid transparent;
+  }
+  
+  .boxSocial{
+    position: absolute;
+    height: 35px;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgb(43, 26, 26);
+    border-top: 1px solid rgba(54, 41, 41, 0.7);
+  }
+  
+  .boxSocial__img{
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+  }
+  
+  
+    /***********************************/
+    /********* INICIO  *******************/
+    /***********************************/
+    
+    .boxTextos{
+      position: absolute;
+      display: flex;
+      z-index: 1;
+      top: 70px;
+    }
+    
+    .boxTextos__titulo{
+      font-size: 52px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .boxTextos__parrafo{
+      font-size: 14px;
+    }
+  }
+  
+
+@media screen and (max-width: 650px) and (orientation: landscape){
+
+/********************* MENU **************************/
+.menu{
+  overflow-y: scroll;
+}
+
+.boxLogo__img{
+  height: 50px;
+  width: 60px;
+}
+
+.menu__li{
+  margin: 2px 0px;
+}
+
+
+.menu__link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  font-family: 'raleway';
+  font-size: 10px;
+  /*background-color: rgba(36, 23, 23, 0.8); */
+  border: 1px solid transparent;
+}
+
+.boxSocial{
+  position: absolute;
+  height: 45px;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgb(43, 26, 26);
+  border-top: 1px solid rgba(54, 41, 41, 0.7);
+}
+
+.boxSocial__img{
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+}
+
+
+  /***********************************/
+  /********* INICIO  *******************/
+  /***********************************/
+  
+  .boxTextos{
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    top: 70px;
+  }
+  
+  .boxTextos__titulo{
+    font-size: 52px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .boxTextos__parrafo{
+    font-size: 14px;
+  }
 }
 
 
@@ -1901,7 +2117,7 @@ ul{list-style: none;}
   .nav{
     z-index: 10;
     height: 100%;
-    width: 40%;
+    width: 35%;
   }
   
   
@@ -2158,7 +2374,8 @@ ul{list-style: none;}
   .nav{
     z-index: 10;
     height: 100%;
-    width: 58%;
+    width: 45%;
+    
   }
   
   .menu__link{
